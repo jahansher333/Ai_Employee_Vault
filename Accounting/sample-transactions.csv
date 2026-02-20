@@ -1,0 +1,19 @@
+date,description,amount,category
+2026-01-05,Client Alpha Invoice,8500.00,Revenue
+2026-01-10,Office Rent,-1500.00,Operations
+2026-01-12,Software Licenses,-299.99,Technology
+2026-01-15,Client Beta Payment,3200.00,Revenue
+2026-01-18,Marketing Campaign,-750.00,Marketing
+2026-01-20,Office Supplies,-85.50,Operations
+2026-01-25,Client Gamma Retainer,5000.00,Revenue
+2026-01-28,Cloud Hosting,-120.00,Technology
+2026-02-01,Office Rent,-1500.00,Operations
+2026-02-05,Client Alpha Invoice,8500.00,Revenue
+2026-02-08,Contractor Payment,-2400.00,Services
+2026-02-10,Software Licenses,-299.99,Technology
+2026-02-12,Client Delta Project,12000.00,Revenue
+2026-02-14,Team Lunch,-180.00,Operations
+2026-02-15,Emergency Server Repair,-4500.00,Technology
+2026-02-18,Client Beta Payment,3200.00,Revenue
+2026-02-20,Insurance Premium,-950.00,Operations
+2026-02-22,Conference Tickets,-1200.00,Marketing
