@@ -1,0 +1,21 @@
+# Bronze Tier
+watchdog>=3.0.0
+python-dotenv>=1.0.0
+
+# Silver Tier
+google-api-python-client>=2.100.0
+google-auth-oauthlib>=1.2.0
+pandas>=2.0.0
+
+# Silver Tier — WhatsApp + LinkedIn
+playwright>=1.40.0
+requests>=2.31.0
+
+# MCP Servers
+fastmcp>=2.0.0
+
+# Gold Tier — Odoo XML-RPC (built-in xmlrpc.client, no extra dependency)
+
+# Gold Tier — Social APIs (optional, simulation mode works without these)
+# tweepy>=4.14.0
+# facebook-sdk>=3.0.0

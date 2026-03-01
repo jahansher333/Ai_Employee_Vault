@@ -1,46 +1,38 @@
-# Secrets — NEVER commit
+# Environment and secrets
 .env
 credentials.json
 token.json
-*.secret
-*.key
+
 
 # Python
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+*.egg-info/
 .venv/
 venv/
-dist/
-*.egg-info/
-
-# Playwright sessions
-*_session/
+.pytest_cache/
 
 # IDE
 .vscode/
 .idea/
 *.swp
-*.swo
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Logs (keep structure, ignore content)
+# Logs (runtime data)
 Logs/*.jsonl
 Logs/.watcher_ledger.txt
 Logs/.gmail_ledger.txt
 Logs/.whatsapp_ledger.txt
 
-# Obsidian
-.obsidian/
+# Gold Tier — session files & social tokens
+*_session/
+*.session
+social_tokens/
 
-# Test / cache
-.pytest_cache/
-htmlcov/
-.coverage
-
-# Generated images
-scripts/assets/ig_*.png
-scripts/_ig_*.py
+# Obsidian (local settings)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json

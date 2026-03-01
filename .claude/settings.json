@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "odoo-xmlrpc": {
+      "command": "python",
+      "args": ["D:/Hac3/Ai_Employee_Vault/scripts/odoo_mcp.py"],
+      "env": {
+        "VAULT_PATH": "D:/Hac3/Ai_Employee_Vault",
+        "ODOO_URL": "http://localhost:8069",
+        "ODOO_DB": "odoodb",
+        "ODOO_USER": "jahansherkhan9876@gmail.com",
+        "ODOO_PASSWORD": "Aroob#432111"
+      }
+    },
+    "social": {
+      "command": "python",
+      "args": ["D:/Hac3/Ai_Employee_Vault/scripts/mcp_social_server.py"],
+      "env": {
+        "VAULT_PATH": "D:/Hac3/Ai_Employee_Vault",
+        "INSTAGRAM_USERNAME": "alone12288333"
+      }
+    },
+    "email": {
+      "command": "python",
+      "args": ["D:/Hac3/Ai_Employee_Vault/scripts/mcp_email_server.py"],
+      "env": {
+        "VAULT_PATH": "D:/Hac3/Ai_Employee_Vault",
+        "GMAIL_CREDENTIALS_PATH": "D:/Hac3/Ai_Employee_Vault/credentials.json",
+        "GMAIL_TOKEN_PATH": "D:/Hac3/Ai_Employee_Vault/token.json"
+      }
+    }
+  }
+}
