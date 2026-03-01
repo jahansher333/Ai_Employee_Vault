@@ -1,0 +1,235 @@
+{
+  "main": {
+    "id": "d3198dff1b195b5f",
+    "type": "split",
+    "children": [
+      {
+        "id": "7ed2e9a3bea09059",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7126e2c8c3025836",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Needs_Action/EMAIL_214358_Whats-New-The-mobile-SDK-doing-4M-get-the-perfect-.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "EMAIL_214358_Whats-New-The-mobile-SDK-doing-4M-get-the-perfect-"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "cbe8c0a283868e37",
+    "type": "split",
+    "children": [
+      {
+        "id": "9c9640348ce0a3ff",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "73fe60c9445c3b3c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "98bba50782efb6f3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "7515cbe0d66ebbb1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "214505d462ac7cd1",
+    "type": "split",
+    "children": [
+      {
+        "id": "34aa8a2ae5318212",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7be188b885a3f1e5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Untitled.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Untitled"
+            }
+          },
+          {
+            "id": "329207ae75a39a3b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Untitled.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Untitled"
+            }
+          },
+          {
+            "id": "6e767cdce6536bed",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "8d659cd25a9ab301",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "1b1b27e07bb0858b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Untitled.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Untitled"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "7126e2c8c3025836",
+  "lastOpenFiles": [
+    "specs/004-whatsapp-linkedin-silver/research.md",
+    "scripts/assets/twitter_session_check.png",
+    "scripts/assets/li_session_test.png",
+    "scripts/assets/fb_session_test.png",
+    "Pending_Approval/TWITTER_190226_AI-Business-Automation.md",
+    "Pending_Approval/INSTAGRAM_190226_AI-Business-Automation.md",
+    "Pending_Approval/FACEBOOK_190226_AI-Business-Automation.md",
+    "scripts/__pycache__/social_engagement.cpython-314.pyc",
+    "scripts/assets/ig_profile_visible.png",
+    "scripts/assets/ig_notifications.png",
+    "scripts/assets/ig_headless_profile.png",
+    "scripts/social_engagement.py",
+    "scripts/assets/ig_reply_done.png",
+    "scripts/assets/ig_liked_comment.png",
+    "scripts/assets/ig_post_detail.png",
+    "scripts/assets/ig_profile_after.png",
+    "scripts/_ig_post_live.py",
+    "scripts/_ig_post_test.py",
+    "Done/INSTAGRAM_180704_AI-Automation.md",
+    "Approved/INSTAGRAM_180704_AI-Automation.md",
+    "Pending_Approval/INSTAGRAM_180704_AI-Automation.md",
+    "scripts/assets",
+    "scripts/_odoo_audit.py",
+    "Needs_Action/EMAIL_141754_Zero-to-Production-AI-Product-Engineering-Starts-T.md",
+    "Needs_Action/EMAIL_141754_Why-is-the-timing-so-good-for-this.md",
+    "Needs_Action/EMAIL_141753_Securing-AI-Agents-When-Using-Google-Managed-MCP-S.md",
+    "Needs_Action/EMAIL_141753_DEV-Weekend-Challenge-is-LIVE-Each-winner-gets-300.md",
+    "Needs_Action/EMAIL_141752_Jansher-your-next-obsession-awaits.md",
+    "Needs_Action/EMAIL_141752_Um-hello-impeccable-taste.md",
+    "Needs_Action/EMAIL_141751_Whats-New-From-tweet-to-20K-MRR-solopreneurship-as.md",
+    "Needs_Action/EMAIL_141751_OpenClaw-with-web-search.md",
+    "Needs_Action/EMAIL_141750_PostgresPGBouncer-minor-version-updates-Timescale-.md",
+    "Pending_Approval/approve-EMAIL_141750_So-you-Jansher.md",
+    "Needs_Action/EMAIL_141750_So-you-Jansher.md",
+    "token.json",
+    "token.json.bak",
+    "Briefings",
+    "Plans",
+    "history/prompts/gold-tier-autonomous/028-gold-tier-remaining-phases-polish.green.prompt.md",
+    "history/prompts/gold-tier-autonomous/027-social-summary-mcp-servers.green.prompt.md",
+    "history/prompts/gold-tier-autonomous/026-ralph-wiggum-autonomous-loop.green.prompt.md",
+    "Done/INSTAGRAM_125538_AI-Automation.md",
+    "Done/FACEBOOK_125537_AI-Automation.md",
+    "Approved/INSTAGRAM_125538_AI-Automation.md",
+    "Approved/FACEBOOK_125537_AI-Automation.md",
+    "Pending_Approval/INSTAGRAM_125538_AI-Automation.md"
+  ]
+}
