@@ -298,6 +298,60 @@ def send_email(
         return False
 
 
+def move_email_to_done(gmail_id: str, vault_path: Path) -> Path | None:
+    """Find the EMAIL task file matching a Gmail ID and move it to Done/.
+
+    Searches Needs_Action/ and Pending_Approval/ for files containing the
+    gmail_id in frontmatter, then moves them to Done/ with status updated.
+    Returns the Done/ path on success, None if not found.
+    """
+    search_dirs = [
+        vault_path / "Needs_Action",
+        vault_path / "Pending_Approval",
+    ]
+    done_dir = vault_path / "Done"
+    done_dir.mkdir(parents=True, exist_ok=True)
+
+    for search_dir in search_dirs:
+        if not search_dir.exists():
+            continue
+        for f in search_dir.glob("*.md"):
+            try:
+                content = f.read_text(encoding="utf-8")
+            except Exception:
+                continue
+            if f"gmail_id: {gmail_id}" in content:
+                # Update status to done
+                content = re.sub(
+                    r"^status:\s*\w+",
+                    "status: done",
+                    content,
+                    flags=re.MULTILINE,
+                )
+                # Add completed_at timestamp
+                now = datetime.now(timezone.utc).isoformat()
+                content = re.sub(
+                    r"^(status:\s*done)",
+                    f"\\1\ncompleted_at: {now}",
+                    content,
+                    flags=re.MULTILINE,
+                )
+                dest = done_dir / f.name
+                if dest.exists():
+                    stem = f.stem
+                    suffix = datetime.now().strftime("%H%M%S")
+                    dest = done_dir / f"{stem}-{suffix}.md"
+                dest.write_text(content, encoding="utf-8")
+                if dest.exists() and dest.stat().st_size > 0:
+                    f.unlink()
+                    # Also remove approval file if it exists
+                    approval = vault_path / "Pending_Approval" / f"approve-{f.name}"
+                    if approval.exists():
+                        approval.unlink()
+                    return dest
+    return None
+
+
 # ---------------------------------------------------------------------------
 # Task file creation
 # ---------------------------------------------------------------------------
@@ -510,11 +564,27 @@ def main() -> None:
     if args.reply:
         gmail_id, message = args.reply
         service = build_gmail_service(creds_path, token_path)
+        logger = AuditLogger(vault)
         print(f"Replying to {gmail_id}...")
         if reply_to_email(service, gmail_id, message):
             print("Reply sent successfully!")
+            logger.log("email_replied", gmail_id, "success",
+                        details={"reply_length": len(message)})
+            # Move task file to Done/
+            done_path = move_email_to_done(gmail_id, vault)
+            if done_path:
+                print(f"  [DONE] Moved to Done/{done_path.name}")
+                logger.log("item_moved_done", done_path.name, "success",
+                            details={"gmail_id": gmail_id})
+            else:
+                print(f"  [INFO] No task file found for gmail_id {gmail_id}")
+            # Update dashboard
+            from update_dashboard import update_dashboard
+            update_dashboard(vault, logger)
         else:
             print("Failed to send reply.")
+            logger.log("email_replied", gmail_id, "error",
+                        error="Reply failed")
         return
 
     if args.send:

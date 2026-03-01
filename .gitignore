@@ -3,6 +3,7 @@
 credentials.json
 token.json
 
+
 # Python
 __pycache__/
 *.py[cod]
@@ -25,6 +26,12 @@ Thumbs.db
 Logs/*.jsonl
 Logs/.watcher_ledger.txt
 Logs/.gmail_ledger.txt
+Logs/.whatsapp_ledger.txt
+
+# Gold Tier — session files & social tokens
+*_session/
+*.session
+social_tokens/
 
 # Obsidian (local settings)
 .obsidian/workspace.json

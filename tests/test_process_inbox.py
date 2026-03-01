@@ -105,8 +105,8 @@ class TestProcessFile:
     def test_process_new_task(self, vault, logger):
         task = vault / "Needs_Action" / "test-task.md"
         task.write_text(
-            "---\ntype: task\npriority: high\ncategory: review\nstatus: new\n---\n\n"
-            "# Review Q3 Report\n\nPlease review and summarize.\n"
+            "---\ntype: task\npriority: low\ncategory: general\nstatus: new\n---\n\n"
+            "# Simple Reminder\n\nPlease water the plants.\n"
         )
         result = process_file(task, vault, logger)
         assert result == "planned"

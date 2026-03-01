@@ -18,7 +18,9 @@ def vault(tmp_path):
     (tmp_path / "Done").mkdir()
     (tmp_path / "Logs").mkdir()
     (tmp_path / "Pending_Approval").mkdir()
+    (tmp_path / "Approved").mkdir()
     (tmp_path / "Accounting").mkdir()
+    (tmp_path / "Plans").mkdir()
     return tmp_path
 
 

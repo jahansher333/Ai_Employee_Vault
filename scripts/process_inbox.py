@@ -21,6 +21,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from audit_logger import AuditLogger
+from reasoning_loop import detect_complexity, process_complex_task
 
 
 SENSITIVE_KEYWORDS = [
@@ -107,17 +108,40 @@ def generate_action_plan(frontmatter: dict, body: str) -> str:
     title_match = re.search(r"^#\s+(.+)$", body, re.MULTILINE)
     title = title_match.group(1) if title_match else "Untitled Task"
 
+    task_type = frontmatter.get("type", "task")
+
+    if task_type == "whatsapp":
+        steps = (
+            f"1. Read the urgent WhatsApp message above\n"
+            f"2. Assess urgency and determine response priority\n"
+            f"3. Draft a response or take the requested action\n"
+            f"4. Reply to the sender via WhatsApp\n"
+            f"5. Move to Done when resolved\n"
+        )
+    elif task_type == "email":
+        steps = (
+            f"1. Review the email content and context above\n"
+            f"2. Determine required action or response\n"
+            f"3. Draft reply or execute the requested task\n"
+            f"4. Send response via email if needed\n"
+            f"5. Move to Done when complete\n"
+        )
+    else:
+        steps = (
+            f"1. Review the task requirements above\n"
+            f"2. Gather necessary context and resources\n"
+            f"3. Execute the {category} task: \"{title}\"\n"
+            f"4. Validate output meets expected criteria\n"
+            f"5. Move to Done when complete\n"
+        )
+
     plan = (
         f"\n\n## Action Plan\n\n"
         f"**Generated**: {datetime.now(timezone.utc).isoformat()}\n"
         f"**Priority**: {priority}\n"
         f"**Category**: {category}\n\n"
         f"### Recommended Steps\n\n"
-        f"1. Review the task requirements above\n"
-        f"2. Gather necessary context and resources\n"
-        f"3. Execute the {category} task: \"{title}\"\n"
-        f"4. Validate output meets expected criteria\n"
-        f"5. Move to Done when complete\n\n"
+        f"{steps}\n"
         f"### Estimated Effort\n\n"
         f"To be determined by human review.\n\n"
         f"### Dependencies\n\n"
@@ -156,7 +180,7 @@ def process_file(file_path: Path, vault: Path, logger: AuditLogger) -> str:
 
     # Skip already-processed files
     status = frontmatter.get("status", "new")
-    if status in ("planned", "done"):
+    if status in ("planned", "done", "plan_created", "pending_approval"):
         logger.log("file_skipped", file_path.name, "skipped",
                     details={"reason": f"status={status}"})
         return "skipped"
@@ -168,6 +192,16 @@ def process_file(file_path: Path, vault: Path, logger: AuditLogger) -> str:
         updated = serialize_frontmatter(frontmatter, body)
         file_path.write_text(updated, encoding="utf-8")
         return "pending_approval"
+
+    # Check for complex tasks — route to reasoning loop
+    complexity = detect_complexity(frontmatter, body)
+    if complexity["is_complex"]:
+        result = process_complex_task(file_path, vault, logger)
+        plan_name = result.get("plan_file", "unknown")
+        logger.log("complex_task_routed", file_path.name, "success",
+                    details={"plan": plan_name, "score": complexity["score"]})
+        print(f"  [COMPLEX] {file_path.name} -> Plans/{plan_name}")
+        return "plan_created"
 
     # Generate action plan
     with logger.timed("inbox_processed", file_path.name) as ctx:
@@ -317,7 +351,7 @@ def main() -> None:
         return
 
     print(f"Processing {len(files)} file(s) from Needs_Action/...\n")
-    results = {"planned": 0, "pending_approval": 0, "skipped": 0, "error": 0}
+    results = {"planned": 0, "pending_approval": 0, "plan_created": 0, "skipped": 0, "error": 0}
     processed_files = []
     for f in files:
         try:
