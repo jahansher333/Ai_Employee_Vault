@@ -1,0 +1,46 @@
+# Secrets — NEVER commit
+.env
+credentials.json
+token.json
+*.secret
+*.key
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+dist/
+*.egg-info/
+
+# Playwright sessions
+*_session/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs (keep structure, ignore content)
+Logs/*.jsonl
+Logs/.watcher_ledger.txt
+Logs/.gmail_ledger.txt
+Logs/.whatsapp_ledger.txt
+
+# Obsidian
+.obsidian/
+
+# Test / cache
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Generated images
+scripts/assets/ig_*.png
+scripts/_ig_*.py
