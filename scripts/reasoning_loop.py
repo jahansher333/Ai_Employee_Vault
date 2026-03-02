@@ -492,7 +492,16 @@ def complete_plan(
 
     Returns the Done/ path for the plan, or None on failure.
     """
-    content = plan_path.read_text(encoding="utf-8")
+    import time as _time
+    # Windows file-lock guard: retry read if the file was just written
+    for _attempt in range(3):
+        try:
+            content = plan_path.read_text(encoding="utf-8")
+            break
+        except PermissionError:
+            if _attempt == 2:
+                raise
+            _time.sleep(0.5)
     frontmatter, body = parse_frontmatter(content)
 
     if frontmatter.get("status") != "completed":
