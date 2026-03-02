@@ -36,3 +36,11 @@ social_tokens/
 # Obsidian (local settings)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+
+# Platinum Tier — deployment secrets and runtime
+deploy/.env
+In_Progress/cloud/*
+In_Progress/local/*
+!In_Progress/cloud/.gitkeep
+!In_Progress/local/.gitkeep
+token.json.bak

@@ -1,0 +1,43 @@
+// Syncthing ignore patterns — mirrors .gitignore security exclusions
+// See: https://docs.syncthing.net/users/ignoring.html
+
+// Secrets and credentials — NEVER sync
+.env
+.env.*
+credentials.json
+token.json
+token.json.bak
+
+// Session files
+*_session
+*.session
+
+// Python artifacts
+__pycache__
+*.py[cod]
+*$py.class
+*.egg-info
+.venv
+venv
+.pytest_cache
+
+// IDE
+.vscode
+.idea
+*.swp
+
+// OS
+.DS_Store
+Thumbs.db
+
+// Logs (runtime data — too large/frequent)
+Logs/*.jsonl
+Logs/.watcher_ledger.txt
+Logs/.gmail_ledger.txt
+Logs/.whatsapp_ledger.txt
+
+// Git internals
+.git
+
+// Deploy env (cloud-specific)
+deploy/.env
