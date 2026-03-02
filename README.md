@@ -1,6 +1,6 @@
-# AI Employee - Gold Tier
+# AI Employee - Platinum Tier
 
-A local-first, privacy-focused Digital FTE built with Claude Code + Obsidian + watchdog + Gmail API + Playwright + pandas + Odoo + MCP servers.
+A local-first, privacy-focused Digital FTE built with Claude Code + Obsidian + watchdog + Gmail API + Playwright + pandas + Odoo + MCP servers. Platinum Tier adds always-on Cloud VM + synced vault + work-zone specialization.
 
 ## Tier Status
 
@@ -9,6 +9,7 @@ A local-first, privacy-focused Digital FTE built with Claude Code + Obsidian + w
 | Bronze | COMPLETE | File watcher, task processing, audit logging, dashboard |
 | Silver | COMPLETE | Gmail watcher, WhatsApp watcher, LinkedIn posting, CSV analytics, reasoning loop, CEO briefing, orchestrator, 11 agent skills |
 | Gold | COMPLETE | Odoo accounting (MCP), multi-platform social posting (FB/IG/X), 3 MCP servers, auto-restart orchestrator, Ralph Wiggum autonomous loop, error recovery, weekly audit with Odoo financials |
+| Platinum | COMPLETE | Always-on Cloud VM, work-zone specialization (cloud drafts / local executes), synced vault with domain folders, claim-by-move protocol, Odoo cloud deploy (Docker + nginx HTTPS + backups), health monitoring, A2A messaging, local approval workflow |
 
 ## What It Does
 
@@ -101,6 +102,54 @@ Unified error handling across all integrations:
 3. **Graceful degradation**: Odoo down → CSV fallback for briefings
 4. **Auto-restart**: orchestrator restarts crashed components
 
+### Work-Zone Specialization (Platinum Tier)
+Two-zone architecture separating Cloud (24/7 VM) from Local (your machine):
+1. **Cloud zone**: Email triage, email/social drafts, Odoo reads, health monitoring, vault sync
+2. **Local zone**: Email send, social publish, WhatsApp interaction, Odoo writes, payment execution, approvals
+3. **Zone enforcement**: `@zone_required` decorator blocks unauthorized operations at runtime
+4. **Orchestrator**: `--zone cloud|local` flag to launch zone-appropriate components only
+
+### Synced Vault + Claim-by-Move (Platinum Tier)
+Structured vault delegation between Cloud and Local via Git sync:
+1. **Domain folders**: `Needs_Action/<domain>/`, `Plans/<domain>/`, `Pending_Approval/<domain>/` for EMAIL, SOCIAL, ODOO
+2. **Claim-by-move**: Atomic `os.rename()` to `In_Progress/<agent>/` prevents double-processing
+3. **Updates protocol**: Cloud writes to `Updates/`, Local reads and merges
+4. **Git sync**: Automatic push/pull every 2 minutes via systemd timer
+5. **Syncthing alternative**: `.syncignore` patterns for file-based sync
+6. **Security**: `.env`, `credentials.json`, `token.json` excluded from all sync methods
+
+### Cloud Health Monitoring (Platinum Tier)
+Watchdog service for Cloud zone components:
+1. **Process checks**: Monitor PIDs of running watchers/services
+2. **HTTP checks**: Verify Odoo, nginx, and other endpoints respond
+3. **Sync freshness**: Alert if vault sync is stale (>5 minutes)
+4. **Alert threshold**: After 3 consecutive failures, writes `ALERT_*.md` to `Updates/`
+5. **Continuous loop**: Runs every 60 seconds with summary logging
+
+### Odoo Cloud Deploy (Platinum Tier)
+Docker-based Odoo Community deployment on Oracle Cloud VM:
+1. **Docker Compose**: Odoo 17 + PostgreSQL 16 with health checks and persistent volumes
+2. **HTTPS**: nginx reverse proxy with Let's Encrypt SSL certificates
+3. **Backups**: Daily `pg_dump` with 7-day retention via cron
+4. **Health watchdog**: Monitors Odoo web endpoint and restarts if down
+5. **VM setup**: One-script Oracle Cloud ARM VM provisioning
+
+### Local Approval Service (Platinum Tier)
+Human-in-the-loop approval for Cloud-drafted actions:
+1. **Scans** `Pending_Approval/<domain>/` for tasks promoted by Cloud
+2. **Claims** tasks atomically via claim-by-move
+3. **Presents** actions for human review (auto-approve mode for testing)
+4. **Executes** approved actions via Local-zone-allowed operations
+5. **Logs** all approval decisions to audit trail
+
+### A2A Messaging (Platinum Tier — Optional)
+Agent-to-Agent direct messaging with vault audit:
+1. **HTTP webhook**: Cloud sends to Local's `/a2a` endpoint
+2. **Vault fallback**: If webhook unreachable, writes to `Needs_Action/<domain>/A2A_FALLBACK_*.md`
+3. **Audit trail**: Every A2A message recorded in `Updates/A2A_*.md`
+4. **Message validation**: Enforced schema for task, status, sync, and alert message types
+5. **Health endpoint**: `GET /a2a/health` for monitoring
+
 ### Data Analyzer (Silver Tier)
 Analyze financial CSV data:
 1. **Reads** CSV files from `Accounting/`
@@ -147,11 +196,17 @@ cp .env.example .env
 ### 4. Launch Everything (Recommended)
 
 ```bash
-# Start all components with one command
+# Start all components with one command (local zone, default)
 python scripts/orchestrator.py
 
 # With auto-restart for crashed components
 python scripts/orchestrator.py --auto-restart
+
+# Launch in cloud zone (on VM)
+python scripts/orchestrator.py --zone cloud --auto-restart
+
+# Launch in local zone (on your machine)
+python scripts/orchestrator.py --zone local --auto-restart
 
 # Selectively disable components
 python scripts/orchestrator.py --no-whatsapp --no-gmail --no-odoo --no-social
@@ -278,6 +333,76 @@ python scripts/data_analyzer.py
 
 # Or analyze a specific file:
 python scripts/data_analyzer.py --file Accounting/q1-report.csv
+```
+
+### 10. Platinum Tier: Cloud VM Setup
+
+**Oracle Cloud Always Free VM** (no credit card required):
+
+1. Sign up at [Oracle Cloud Free Tier](https://www.oracle.com/cloud/free/) — requires only email verification
+2. Create an ARM-based Ampere A1 instance (1 OCPU, 6 GB RAM, Ubuntu 22.04)
+3. SSH into the VM and run the setup script:
+   ```bash
+   scp deploy/setup-vm.sh ubuntu@<VM_IP>:~/
+   ssh ubuntu@<VM_IP>
+   chmod +x setup-vm.sh && sudo ./setup-vm.sh
+   ```
+4. Configure environment:
+   ```bash
+   cp deploy/.env.cloud.example /opt/ai-employee/.env
+   # Edit .env with your domain and Odoo credentials
+   ```
+5. Start Odoo (Docker):
+   ```bash
+   cd /opt/ai-employee && docker compose up -d
+   ```
+6. Set up HTTPS (replace `your-domain.com`):
+   ```bash
+   sudo certbot --nginx -d your-domain.com
+   ```
+7. Enable systemd services:
+   ```bash
+   sudo systemctl enable --now ai-employee vault-sync.timer
+   ```
+
+### 11. Platinum Tier: Vault Sync Setup
+
+**Option A: Git Sync (recommended)**
+```bash
+# On Cloud VM
+cd /path/to/vault && git init
+git remote add origin <your-private-repo>
+# Systemd timer handles automatic push/pull every 2 minutes
+```
+
+**Option B: Syncthing**
+```bash
+# Run the setup script on both machines
+bash deploy/sync/syncthing-setup.sh
+# Configure shared folder in Syncthing GUI (http://localhost:8384)
+```
+
+### 12. Platinum Tier: Local Approval Service
+
+```bash
+# Start the local approval watcher
+python scripts/local_approval.py
+
+# One-shot scan for pending approvals
+python scripts/local_approval.py --once
+
+# Auto-approve mode (for testing)
+python scripts/local_approval.py --auto-approve
+```
+
+### 13. Platinum Demo (Validate All Requirements)
+
+```bash
+# Run the full Platinum demo (46 checkpoints)
+python scripts/platinum_demo.py --verbose
+
+# Run the Platinum self-test suite (31 tests)
+python -m pytest tests/test_platinum_tier_selftest.py -v
 ```
 
 ## Test: End-to-End Verification
@@ -429,20 +554,28 @@ Ai_Employee_Vault/
 ├── README.md                 # This file
 ├── requirements.txt          # Python dependencies
 ├── .env.example              # Environment template
+├── .syncignore               # Syncthing exclusion patterns
 ├── Needs_Action/             # Drop tasks here / watchers create files
+│   ├── EMAIL/                # Email domain tasks (Platinum)
+│   ├── SOCIAL/               # Social domain tasks (Platinum)
+│   └── ODOO/                 # Odoo domain tasks (Platinum)
 ├── Plans/                    # Active reasoning loop plans
+│   ├── EMAIL/                # Email plans (Platinum)
+│   ├── SOCIAL/               # Social plans (Platinum)
+│   └── ODOO/                 # Odoo plans (Platinum)
+├── Pending_Approval/         # Sensitive actions + drafts awaiting approval
+│   ├── EMAIL/                # Email drafts for Local approval (Platinum)
+│   ├── SOCIAL/               # Social drafts for Local approval (Platinum)
+│   └── ODOO/                 # Odoo drafts for Local approval (Platinum)
+├── In_Progress/              # Claimed tasks (Platinum)
+│   ├── cloud/                # Tasks claimed by Cloud agent
+│   └── local/                # Tasks claimed by Local agent
+├── Updates/                  # Cloud→Local status updates (Platinum)
+├── Approved/                 # Posts approved for publishing
+├── Done/                     # Completed items (timestamped)
 ├── Briefings/                # Weekly CEO briefing reports
-├── Pending_Approval/         # Sensitive actions + LinkedIn drafts
-├── Approved/                 # LinkedIn posts approved for publishing
-├── Done/                     # Completed items
 ├── Accounting/               # CSV financial data for analytics
-│   └── sample-transactions.csv
 ├── Logs/                     # Audit trail (JSON Lines)
-│   ├── YYYY-MM-DD.audit.jsonl
-│   ├── .watcher_ledger.txt   # File watcher dedup
-│   ├── .gmail_ledger.txt     # Gmail watcher dedup
-│   └── .whatsapp_ledger.txt  # WhatsApp watcher dedup
-├── Bronze/                   # Bronze Tier reference docs
 ├── scripts/
 │   ├── watcher.py            # File system watcher (watchdog)
 │   ├── gmail_watcher.py      # Gmail API polling watcher
@@ -452,33 +585,40 @@ Ai_Employee_Vault/
 │   ├── data_analyzer.py      # CSV analytics (pandas)
 │   ├── reasoning_loop.py     # Multi-step reasoning & plan execution
 │   ├── weekly_briefing.py    # Scheduled CEO briefing generator
-│   ├── orchestrator.py       # Launch all components (single entry point)
+│   ├── orchestrator.py       # Launch all components (--zone cloud|local)
 │   ├── update_dashboard.py   # Dashboard regenerator
-│   └── audit_logger.py       # Shared logging module
-├── .claude/skills/
-│   ├── simple-task-reader.md       # Read task -> summarize -> Dashboard
-│   ├── process-inbox-item.md       # Full inbox processing
-│   ├── move-to-done.md             # Task completion
-│   ├── check-pending-approvals.md  # Approval workflow
-│   ├── data-analyzer.md            # CSV analysis -> Dashboard analytics
-│   ├── generate-status-report.md   # Dashboard updates
-│   ├── whatsapp-message-parser.md  # WhatsApp message detection
-│   ├── linkedin-poster.md          # LinkedIn post drafting
-│   ├── reasoning-loop.md           # Multi-step reasoning loop
-│   ├── ceo-briefing.md             # Weekly CEO briefing
-│   └── orchestrator.md             # Launch all components
+│   ├── audit_logger.py       # Shared logging module
+│   ├── zone_config.py        # Zone enforcement (cloud/local) [Platinum]
+│   ├── claim_task.py         # Claim-by-move protocol [Platinum]
+│   ├── vault_delegation.py   # Vault communication protocol [Platinum]
+│   ├── vault_sync.py         # Git-based vault sync [Platinum]
+│   ├── cloud_health_monitor.py # Health watchdog [Platinum]
+│   ├── local_approval.py     # Local approval service [Platinum]
+│   ├── a2a_client.py         # A2A webhook sender [Platinum]
+│   ├── a2a_server.py         # A2A webhook receiver [Platinum]
+│   └── platinum_demo.py      # Platinum demo (46 checkpoints)
+├── deploy/                   # Deployment files [Platinum]
+│   ├── setup-vm.sh           # Oracle Cloud VM provisioning
+│   ├── docker-compose.yml    # Odoo 17 + PostgreSQL 16
+│   ├── .env.cloud.example    # Cloud environment template
+│   ├── nginx/
+│   │   ├── odoo.conf         # Reverse proxy + HTTPS
+│   │   └── ssl-renew.sh      # Certbot renewal
+│   ├── backup/
+│   │   └── odoo-backup.sh    # Daily pg_dump with retention
+│   ├── systemd/
+│   │   ├── ai-employee.service  # Orchestrator service
+│   │   ├── vault-sync.service   # Git sync oneshot
+│   │   └── vault-sync.timer     # 2-minute sync timer
+│   └── sync/
+│       ├── git-sync.sh       # Git push/pull wrapper
+│       └── syncthing-setup.sh # Syncthing alternative
 └── tests/
-    ├── conftest.py
-    ├── test_watcher.py
-    ├── test_process_inbox.py
-    ├── test_update_dashboard.py
-    ├── test_gmail_watcher.py
-    ├── test_data_analyzer.py
-    ├── test_whatsapp_watcher.py
-    ├── test_linkedin_poster.py
-    ├── test_reasoning_loop.py
-    ├── test_weekly_briefing.py
-    └── test_orchestrator.py
+    ├── test_platinum_tier_selftest.py  # 31 Platinum tests
+    ├── test_zone_config.py    # 25 zone enforcement tests
+    ├── test_claim_task.py     # 16 claim-by-move tests
+    ├── test_a2a.py            # 10 A2A messaging tests
+    └── ... (Bronze/Silver/Gold tests)
 ```
 
 ## Scripts
@@ -502,6 +642,15 @@ Ai_Employee_Vault/
 | `mcp_odoo_server.py` | MCP server for Odoo accounting tools | Gold |
 | `mcp_social_server.py` | MCP server for social posting tools | Gold |
 | `mcp_email_server.py` | MCP server for Gmail tools | Gold |
+| `zone_config.py` | Zone enforcement (cloud/local operations) | Platinum |
+| `claim_task.py` | Atomic claim-by-move protocol | Platinum |
+| `vault_delegation.py` | Vault communication (create/promote/update) | Platinum |
+| `vault_sync.py` | Git-based vault synchronization | Platinum |
+| `cloud_health_monitor.py` | Health watchdog (process/HTTP/sync) | Platinum |
+| `local_approval.py` | Local approval service for Cloud drafts | Platinum |
+| `a2a_client.py` | A2A webhook sender with vault fallback | Platinum |
+| `a2a_server.py` | A2A webhook receiver with validation | Platinum |
+| `platinum_demo.py` | Platinum demo (46 checkpoints) | Platinum |
 
 ## Agent Skills
 
@@ -582,6 +731,31 @@ Positive amounts = revenue, negative = expenses. Columns are flexibly mapped
 - [x] 14 Agent Skills (4 Bronze + 7 Silver + 3 Gold)
 - [x] All AI functionality as Agent Skills
 - [x] HITL approval gates for financial, social, and email actions
+
+### Platinum Tier
+- [x] Cloud VM: Oracle Cloud Always Free ARM instance (1 OCPU, 6 GB RAM)
+- [x] Always-on orchestrator via systemd service (cloud zone)
+- [x] Work-zone specialization: Cloud drafts, Local executes
+- [x] Zone enforcement decorator blocks unauthorized operations
+- [x] Orchestrator `--zone cloud|local` flag
+- [x] Domain folders: Needs_Action/EMAIL|SOCIAL|ODOO, Plans, Pending_Approval
+- [x] Claim-by-move: atomic task claiming prevents double-processing
+- [x] In_Progress/cloud and In_Progress/local directories
+- [x] Vault sync: Git push/pull every 2 minutes (systemd timer)
+- [x] Syncthing alternative with .syncignore
+- [x] Security: .env, credentials.json, token.json excluded from sync
+- [x] Odoo cloud deploy: Docker Compose (Odoo 17 + PostgreSQL 16)
+- [x] HTTPS via nginx reverse proxy + Let's Encrypt
+- [x] Daily backups: pg_dump with 7-day retention
+- [x] Health monitoring: process + HTTP + sync freshness checks
+- [x] Alert after 3 consecutive failures (ALERT_*.md in Updates/)
+- [x] Vault delegation: create → promote → approve → execute workflow
+- [x] Local approval service for Cloud-drafted actions
+- [x] A2A messaging: HTTP webhook + vault fallback + audit trail
+- [x] Cloud writes Updates/, Local reads and merges
+- [x] Platinum demo: 46 checkpoints all passing
+- [x] Platinum self-test: 31 pytest tests all passing
+- [x] All Gold Tier requirements continue to pass (regression)
 
 ## Requirements
 

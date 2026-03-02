@@ -1,0 +1,12 @@
+[Unit]
+Description=Vault Git Sync (one-shot)
+After=network.target
+
+[Service]
+Type=oneshot
+User=ai-employee
+WorkingDirectory=/home/ai-employee/vault
+EnvironmentFile=/home/ai-employee/vault/.env
+ExecStart=/usr/bin/python3.11 scripts/vault_sync.py --once --vault-path /home/ai-employee/vault
+StandardOutput=journal
+StandardError=journal

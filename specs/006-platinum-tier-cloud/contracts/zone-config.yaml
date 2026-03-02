@@ -1,0 +1,99 @@
+# Zone Configuration Contract
+# Defines which operations are permitted in each zone
+
+zones:
+  cloud:
+    description: "Oracle Cloud VM — read-only and draft-creation operations only"
+    allowed_operations:
+      - email_triage        # Read and classify incoming emails
+      - email_draft         # Create draft responses (NOT send)
+      - social_draft        # Create social media post drafts (NOT publish)
+      - odoo_read           # Read invoices, balances, journal entries
+      - odoo_draft          # Prepare draft invoices/actions (NOT confirm)
+      - dashboard_write     # Single-writer: Cloud owns Dashboard.md
+      - updates_write       # Write to /Updates/ folder
+      - health_check        # Monitor component health
+      - vault_sync          # Git push/pull
+    blocked_operations:
+      - email_send          # NEVER send emails from cloud
+      - social_publish      # NEVER publish posts from cloud
+      - whatsapp_interact   # NEVER interact with WhatsApp from cloud
+      - odoo_write          # NEVER create/confirm invoices from cloud
+      - payment_execute     # NEVER execute payments from cloud
+      - approval_grant      # NEVER approve actions from cloud
+    components:
+      - watcher             # File watcher (Bronze)
+      - gmail_watcher       # Email polling (draft-only mode)
+      - process_inbox       # Task classification
+      - social_poster       # Draft-only mode
+      - mcp_odoo_server     # Read-only mode
+      - update_dashboard    # Single-writer mode
+      - cloud_health_monitor # Health watchdog
+      - vault_sync          # Git sync
+
+  local:
+    description: "CEO's local machine — approval and execution of sensitive operations"
+    allowed_operations:
+      - email_send          # Send approved email replies
+      - social_publish      # Publish approved social posts
+      - whatsapp_interact   # Full WhatsApp interaction
+      - odoo_write          # Create/confirm invoices after approval
+      - payment_execute     # Execute payments after approval
+      - approval_grant      # CEO approves/rejects cloud drafts
+      - dashboard_read      # Read Dashboard.md (no write)
+      - updates_read        # Read and merge /Updates/
+      - vault_sync          # Git push/pull
+    blocked_operations:
+      - dashboard_write     # Cloud owns Dashboard.md writes
+    components:
+      - watcher             # File watcher (Bronze)
+      - whatsapp_watcher    # WhatsApp monitoring
+      - local_approval      # Approval workflow
+      - gmail_watcher       # Send mode
+      - social_poster       # Publish mode
+      - linkedin_poster     # Full publish mode
+      - mcp_email_server    # Send mode
+      - mcp_social_server   # Publish mode
+      - vault_sync          # Git sync
+
+# Vault folder structure
+vault_folders:
+  domain_folders:
+    - EMAIL
+    - SOCIAL
+    - ODOO
+  pipeline_stages:
+    - Needs_Action/{domain}/    # New tasks detected
+    - Plans/{domain}/           # Plans created for tasks
+    - Pending_Approval/{domain}/ # Awaiting CEO approval
+    - In_Progress/{agent}/      # Claimed by an agent
+    - Done/                     # Completed tasks
+  special_folders:
+    - Updates/                  # Cloud → Local status channel
+    - Dashboard.md              # Single-writer (Cloud)
+
+# Claim-by-move protocol
+claim_protocol:
+  method: atomic_rename
+  source: "Pending_Approval/{domain}/{filename}"
+  destination: "In_Progress/{agent_id}/{filename}"
+  on_conflict: skip  # FileNotFoundError means another agent claimed it
+  on_complete: "Done/{filename}"
+
+# Sync configuration
+sync:
+  primary: git
+  interval_seconds: 120
+  excluded_patterns:
+    - ".env"
+    - ".env.*"
+    - "credentials.json"
+    - "token.json"
+    - "token.json.bak"
+    - "*.session"
+    - "__pycache__/"
+    - ".venv/"
+    - "venv/"
+    - "node_modules/"
+    - ".pytest_cache/"
+  conflict_strategy: preserve_both  # Create .conflict files, alert user

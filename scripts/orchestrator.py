@@ -3,8 +3,12 @@
 Gold Tier: Launches all watchers, MCP servers, and Gold Tier components
 with health status tracking, optional auto-restart, and graceful degradation.
 
+Platinum Tier: Supports --zone cloud|local to filter components by work zone.
+
 Usage:
     python scripts/orchestrator.py                    # Launch all components
+    python scripts/orchestrator.py --zone cloud       # Cloud zone (drafts only)
+    python scripts/orchestrator.py --zone local       # Local zone (approvals)
     python scripts/orchestrator.py --no-gmail         # Skip Gmail watcher
     python scripts/orchestrator.py --no-whatsapp      # Skip WhatsApp watcher
     python scripts/orchestrator.py --no-scheduler     # Skip briefing scheduler
@@ -27,6 +31,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from audit_logger import AuditLogger
+from zone_config import ZoneConfig
 
 
 # ---------------------------------------------------------------------------
@@ -298,14 +303,29 @@ def run_orchestrator(
         include_social=include_social,
     )
 
+    # Platinum Tier: Filter components by zone
+    zone_mode = os.environ.get("ZONE_MODE", "")
+    if zone_mode:
+        try:
+            zc = ZoneConfig(zone_mode)
+            allowed = set(zc.get_components())
+            components = [
+                c for c in components
+                if c["script"].replace(".py", "") in allowed
+                or c["name"].lower().replace(" ", "_") in allowed
+            ]
+        except ValueError:
+            pass  # Invalid zone mode — skip filtering
+
     # Validate
     warnings = validate_components(components)
     if warnings:
         for w in warnings:
             print(f"  [WARNING] {w}")
 
+    tier_label = f"Platinum ({zone_mode})" if zone_mode else "Gold Tier"
     print("=" * 60)
-    print("  AI Employee Orchestrator — Gold Tier")
+    print(f"  AI Employee Orchestrator — {tier_label}")
     print("=" * 60)
     print(f"\n  Vault: {vault_path}")
     print(f"  Components: {len(components)}")
@@ -385,11 +405,17 @@ def main() -> None:
                         help="Skip Odoo MCP server")
     parser.add_argument("--no-social", action="store_true",
                         help="Skip Social MCP server")
+    parser.add_argument("--zone", choices=["cloud", "local"], default=None,
+                        help="Platinum Tier: set work zone (cloud=drafts, local=approvals)")
     parser.add_argument("--auto-restart", action="store_true",
                         help="Auto-restart crashed components")
     parser.add_argument("--dry-run", action="store_true",
                         help="Show what would launch without starting")
     args = parser.parse_args()
+
+    # Set ZONE_MODE from --zone flag
+    if args.zone:
+        os.environ["ZONE_MODE"] = args.zone
 
     vault = Path(args.vault_path or os.getenv("VAULT_PATH",
                  str(Path(__file__).parent.parent)))

@@ -1,0 +1,18 @@
+[Unit]
+Description=AI Employee Orchestrator (Cloud Zone)
+After=network.target docker.service
+Wants=docker.service
+
+[Service]
+Type=simple
+User=ai-employee
+WorkingDirectory=/home/ai-employee/vault
+EnvironmentFile=/home/ai-employee/vault/.env
+ExecStart=/usr/bin/python3.11 scripts/orchestrator.py --zone cloud --auto-restart --vault-path /home/ai-employee/vault
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
