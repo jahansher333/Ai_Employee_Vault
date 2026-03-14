@@ -1,0 +1,640 @@
+---
+type: briefing
+date: "2026-03-16"
+generated_at: "2026-03-14T03:10:14.047062+05:00"
+status: new
+priority: high
+---
+
+# Monday Briefing — 2026-03-16
+
+**Generated**: 2026-03-14 03:10 PKT
+**For**: CEO / Stakeholder Review
+
+## Executive Summary
+
+- **Financial (Odoo)**: Net income USD 135,296.73 (positive trend)
+- **Overdue**: 9 invoice(s) totaling USD 104,821.27
+- **Open Items**: 524 tasks require attention (510 pending, 13 approvals, 1 active plans)
+- **Completed**: 30 items in Done/
+- **Social**: 21 posts published, 6 pending
+- **Bottlenecks**: 523 issue(s) detected (see below)
+
+## Financial Overview
+
+| Metric | Amount |
+|--------|--------|
+| Total Revenue | $40,400.00 |
+| Total Expenses | $13,785.48 |
+| **Net Income** | **$26,614.52** |
+
+### Anomalies (1 detected)
+
+- **Emergency Server Repair**: $4,500.00 (Technology, 3.4x above average)
+
+### Monthly Trend
+
+| Month | Revenue | Expenses | Net |
+|-------|---------|----------|-----|
+| 2026-01 | $16,700.00 | $2,755.49 | $13,944.51 |
+| 2026-02 | $23,700.00 | $11,029.99 | $12,670.01 |
+
+## Task Pipeline
+
+| Queue | Count | Action Needed |
+|-------|-------|---------------|
+| Needs_Action | 510 | Process or delegate |
+| Active Plans | 1 | Execute next steps |
+| Pending Approval | 13 | Review and approve/reject |
+| Approved | 0 | Publish/execute |
+| Done | 30 | Archive |
+
+## Bottlenecks & Risks
+
+| Type | Item | Age | Issue |
+|------|------|-----|-------|
+| stale_task | bronze-live-test.md | 264h | Task pending for 264h without processing |
+| stale_task | EMAIL_141750_PostgresPGBouncer | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_141750_So-you-Jansher.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_141751_OpenClaw-with-web | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_141751_Whats-New-From-tw | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_141752_Jansher-your-next | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_141752_Um-hello-impeccab | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_141753_DEV-Weekend-Chall | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_141753_Securing-AI-Agent | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_141754_Why-is-the-timing | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_141754_Zero-to-Productio | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214356_Security-alert.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214357_2-Step-Verificati | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214357_2-Step-Verificati | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214357_Your-Google-Accou | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214358_Whats-New-The-mob | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214409_Product-Update-Au | 264h | Task pending for 264h without processing |
+| stale_task | EMAIL_214409_So-you-Jansher.md | 264h | Task pending for 264h without processing |
+| stale_task | EMAIL_214528_February-Replit-P | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214528_Your-Google-Accou | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214529_3-Hackathons-100K | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214529_Anniversary-Prici | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214529_Reminder-Last-24- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214530_Starting-Now-How- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214530_Try-Codex-for-fre | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214531_Starting-in-2-hou | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214531_Tips-to-get-the-m | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214532_The-12ms-Query-vs | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214636_Celebrate-SharePo | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214637_Whats-New-Almost- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214637_Youre-out-of-Goog | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214638_Product-Update-Au | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214638_Reminder-Action-R | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214639_Order-received.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214639_The-Winter-design | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214640_Google-Cloud-Plat | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214640_Learning-100-pers | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214641_Ship-your-first-m | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214745_Why-Stripe-feels- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214746_Connect-your-cale | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214746_Subagents-and-web | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214747_Webinar-starts-in | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214747_Whats-New-13Kmo-d | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214748_Thanks-for-your-r | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214748_Your-Gmail-storag | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214749_Auto-add-teammate | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214749_Theres-still-time | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214749_Your-Rovo-Dev-sub | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214854_Ollama-gets-a-new | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214854_Whats-New-23K-MRR | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214855_Jansher-your-next | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214855_Love-Your-Future- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214856_So-you-Jansher.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214856_Webinar-Reminder- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214857_Your-designs-audi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214857_Your-OTP-Code-for | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214858_Jansher-youre-so- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_214858_So-you-Jansher.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215003_Delphi-is-31-Save | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215003_You-dont-need-to- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215004_Building-a-Scalab | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215004_Whats-New-10M-per | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215005_Fabulosas-bold-re | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215005_Smartphone.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215006_Build-the-Skills- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215006_EPPC26-Programme- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215006_Jansher-love-this | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215007_The-Compiler-Neve | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215112_I-Stopped-Trading | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215112_Let-your-notes-do | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215112_OmniDimension-Tel | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215113_Jansher-your-next | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215113_Unbreakable-APIs- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215114_So-you-Jansher.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215115_4-Hackathons-1M-i | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215116_Start-with-One-Cl | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215116_Whats-New-100s-of | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215118_Stop-Memorizing-D | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215222_Add-payment-detai | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215223_1000-payment-to-A | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215223_Goodbye-being-goo | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215223_Your-Rovo-Dev-fre | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215224_Jansher-your-next | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215224_So-you-Jansher.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215225_Live-Webinar-Harn | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215225_Microsoft-Power-P | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215226_Jansher-love-this | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215226_Token-Session-Coo | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215332_Education.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215333_5-Python-Unit-Tes | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215333_Um-hello-impeccab | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215334_Failed-production | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215335_New-sign-in-detec | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215335_So-you-Jansher.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215336_Last-chance-Algol | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215336_Your-Gmail-storag | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215337_Building-the-7-La | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215441_Action-Required-R | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215442_Consumption-histo | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215442_Notes-handled-for | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215443_Add-payment-detai | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215444_Education-for-Jan | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215444_Tutorial-Masterin | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215445_From-Idea-to-App- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215445_January-Replit-Pr | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215446_Jahansher-Khan-ge | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215446_Um-hello-impeccab | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215551_NEW-Hack-with-Mol | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215551_Remember-Vibe-Cod | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215552_From-prompt-to-fl | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215552_Update-to-Clerks- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215553_From-0-to-shipped | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215553_Jansher-your-next | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215553_Words-for-Jansher | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215554_Tutorial-Getting- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215554_Whats-New-60k-MRR | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215555_Latest-Spline-Fea | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215659_Photography-for-J | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215700_Build-Real-World- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215700_Runaway-buttons-c | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215701_I-Rewrote-A-Java- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215701_Let-AI-take-the-n | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215702_5k-prizes-Spline- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215702_SBOM-Isnt-Optiona | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215703_Catch-the-Canva-C | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215703_How-to-Set-Up-Cla | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215703_ShipStation-API-K | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215808_NEW-HACKATHON-and | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215809_Google-Cloud-Plat | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215809_Mockup-for-Janshe | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215810_Countdown-1-Week- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215810_I-Built-an-AI-Pow | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215810_Smartphone-for-Ja | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215811_5-Mac-Apps-I-Genu | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215811_Is-creative-codin | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215812_Computer-for-Jans | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215812_Discover-Rovo-Dev | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215917_LinkedIn-Is-Repla | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215917_Simplified-Auth-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215918_Computer-for-Jans | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215918_Qdrant-2026-Edge- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215918_Whats-New-From-op | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215919_AI-Architect-Mast | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215919_From-Prototype-to | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215920_I-Stopped-Chasing | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215920_Your-Gmail-storag | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_215921_UX-Pilot-API-Acce | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220026_Introducing-your- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220026_Islamic-Art-for-J | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220027_Garden-Design-for | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220027_How-This-Stretchy | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220028_As-a-Neuroscienti | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220028_Whats-New-20-hour | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220029_Islamic-Art-for-J | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220029_UI-UX-Design-for- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220029_Your-API-Token-is | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220030_CSS-optical-illus | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220134_Project-Todo-app- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220135_Forget-ChatGPT-Ge | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220135_Words-for-Jansher | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220136_Education-for-Jan | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220136_Use-ChatGPT-to-ma | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220137_Invitation-CJ-E-c | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220137_Why-backend-break | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220138_Inactive-cluster- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220138_The-State-of-Agen | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220138_Your-quick-guide- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220243_Education-picks.m | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220243_SURGE-is-now-LIVE | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220244_Jansher-youre-so- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220244_Questions.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220245_Jansher-your-next | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220245_The-5-paid-subscr | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220246_Celebrate-This-Re | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220247_10-Claude-Code-Co | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220247_Chat-GPT-Prompts- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220352_Rovo-Dev-deep-div | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220352_Smartphone-for-Ja | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220353_Computer-for-Jans | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220353_Nextjs-15-for-Beg | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220354_10-OFF-on-Euron-P | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220354_Applied-Science-f | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220354_Whats-New-100M-ho | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220355_Gemini-CLI-Tutori | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220355_Have-you-heard-Ou | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220356_Applied-Science-f | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220500_December-Replit-U | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220500_Whats-New-30k-MRR | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220501_Programming-In-Ge | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220501_Start-something-w | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220502_3D-Shapes-in-Hana | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220502_Computer-for-Jans | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220503_2025-Wrapped-Top- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220503_Try-Gemini-3-Flas | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220503_Whats-New-The-1M- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220504_Get-Up-to-25-OFF- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220608_Why-nobody-can-re | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220609_Doodles-donuts-da | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220609_Jansher-100-certi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220610_25-Integrations-t | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220610_FBS-discontinues- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220610_Introducing-Repli | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220611_1-Thing-You-Can-C | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220611_Double-the-benefi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220612_Jansher-just-trus | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220612_Join-the-Framer-A | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220717_A-NEW-ARC-CHAPTER | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220717_Google-Cloud-Plat | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220717_Now-in-Cursor-Web | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220718_Power-Platform-We | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220718_RAD-Studio-Holida | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220719_OTA-updates-is-ab | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220719_Whats-New-10kmo-b | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220720_Agentic-AI-Single | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220720_The-easiest-way-t | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220720_Welcome-to-Heroku | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220825_Jansher-100-certi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220825_See-What-CJ-Can-D | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220826_Build-a-GCP-Cost- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220826_Data-science-ka-p | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220827_Database-Isolatio | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220827_UI-UX-Design-for- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220828_Groq-models-wrote | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220828_Information-and-C | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220829_CVE-202566478-Exp | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220829_Up-for-a-weekend- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220934_New-login-to-your | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220934_Spline-Holiday-De | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220935_Inngest-Changelog | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220935_Thank-you-for-sig | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220935_Whats-New-From-op | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220936_Gemini-Deep-Resea | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220936_Security-Update-T | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220937_Were-now-Anything | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220937_What-we-wish-ever | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_220938_AI-Agents-Complet | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221042_Introducing-3D-sh | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221042_We-just-made-desi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221043_Stop-using-useMem | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221043_Tutorial-Getting- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221044_7-Websites-that-I | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221044_Whats-New-22kmo-f | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221045_The-easiest-way-t | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221045_The-future-isnt-a | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221046_Applied-Science-f | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221046_Join-the-1000000- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221150_Heres-your-golden | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221151_Gemini-CLI-Tutori | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221151_Take-required-act | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221152_MS-Paint-Agent-sk | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221152_New-Tutorial-3D-P | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221153_Your-MongoDB-Atla | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221154_For-Jansher-Appli | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221154_Good-food-in-your | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221154_We-wrote-the-code | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221259_Gemini-CLI-Tutori | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221259_Whats-New-A-Linke | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221300_Framer-Monthly.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221300_Guardrails-for-AI | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221301_iOS-Universal-Lin | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221301_Reminder-Live-Ses | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221301_Update-to-our-Use | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221302_I-Just-Wanted-to- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221302_Ready-to-ship-wit | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221303_Last-day-of-trial | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221407_Hope-you-cleared- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221407_Last-day-of-trial | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221408_Failed-production | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221409_Failed-production | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221410_Failed-production | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221411_Failed-production | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221411_New-sign-in-detec | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221515_Failed-production | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221516_Failed-preview-de | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221516_Failed-production | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221517_Failed-preview-de | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221517_HuggingFace-Secre | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221518_Implementing-Anth | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221518_New-sign-in-detec | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221519_Action-required-U | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221519_Hugging-Face-Clic | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221519_Someone-added-you | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221625_Failed-production | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221625_Important-Securit | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221625_Youre-out-of-Goog | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221626_Your-MongoDB-Atla | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221627_A-little-birdy-to | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221627_Important-Notice- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221628_Action-Required-Y | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221628_Quick-Favor-Pleas | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221629_Your-Gmail-storag | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221733_Share-Your-Feedba | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221734_Important-Update- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221734_Submission-Guide- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221734_Use-Coral-v1-Subm | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221735_Last-Chance-100K- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221735_Were-LIVE-the-Int | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221736_Security-alert.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221736_Well-help-you-fin | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221737_Your-Google-Accou | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221737_Your-partner-orga | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221841_Action-Required-J | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221842_Did-you-just-log- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221842_Updates-to-our-te | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221843_LeetCode-Weekly-D | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221843_Prize-Pool-reveal | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221844_Changes-to-your-P | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221844_Forget-SEO-Everyo | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221845_Scaling-Postgres- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221845_Your-Internet-of- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221846_Welcome-to-lablab | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221954_How-to-Stay-Up-to | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221954_The-Open-Source-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221955_AI-killed-my-codi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221955_OpenWeatherMap-AP | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221956_Wanna-code-this-w | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221956_Why-Most-Startups | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221957_AI-wont-replace-y | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221957_LeetCode-Weekly-D | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221958_Last-Chance-Land- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_221958_Why-I-Code-3x-Fas | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222103_Welcome-to-Tavily | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222104_New-Challenge-500 | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222104_Updates-to-our-te | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222105_How-I-never-forge | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222105_No-Subject.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222106_Is-experience-blo | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222106_No-Subject.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222107_Browser-based-neu | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222107_Building-the-Enti | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222108_How-to-Create-Age | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222213_Bring-Spline-to-y | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222213_The-One-Method-Th | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222214_Lets-set-up-your- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222214_Microsoft-Azure-A | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222215_Security-alert.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222215_Welcome-to-OmniDi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222215_Welcome-to-WordPr | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222216_Resumes-Are-Dying | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222216_Your-Google-Accou | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222217_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222324_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222325_Building-Your-Fir | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222325_LLMs-explained-Pa | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222326_Join-our-newest-c | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222326_Windsurf-Wave-12. | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222327_RAG-in-Action-Bui | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222327_The-ChatGPT-list- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222333_Small-steps-can-l | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222334_My-2-Year-Old-Shi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222334_n8n---Feedback-in | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222440_Cursor-plugin-new | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222442_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222443_A-Week-in-the-Lif | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222444_Scheduled-Mainten | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222444_Your-file-Video-b | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222445_Coding-vs-VIBE-Co | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222445_Download-your-wor | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222446_Top-8-LLM-RAG-Pro | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222446_Welcome-to-Spline | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222447_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222554_Agentic-AI-Compar | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222554_Your-n8n-trial-ha | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222555_Clerk-Update-Aug- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222555_Final-weekend-for | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222556_3-production-mobi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222557_Join-your-team-on | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222558_Building-an-LLM-A | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222558_GPT-5-is-now-live | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222559_A-new-device-logg | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222559_Were-removing-the | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222716_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222716_Your-n8n-trial-en | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222717_Jahansher-I-found | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222717_Vibe-Coding-for-w | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222718_August-Update-Thi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222718_Why-more-creative | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222719_Let-Users-Talk-to | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222719_The-Bug-That-Drov | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222720_Welcome-to-Fireba | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222720_You-Were-Doing-So | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222851_746583-is-your-pa | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222852_Did-you-just-add- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222853_Did-you-just-add- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222853_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222854_I-Found-10-AI-Bus | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222854_I-saw-you-thinkin | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222855_Framer-Monthly.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222855_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222855_Your-file-Soon-La | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_222856_New-login-to-your | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223004_The-worlds-larges | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223004_Youre-Closer-than | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223005_How-brands-are-le | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223005_You-just-had-a-bi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223006_Premature-optimiz | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223007_No-Subject.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223007_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223008_Course-Enrollment | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223008_Kiss-Your-Way-to- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223009_Welcome-to-n8n.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223114_Could-this-work-f | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223114_Verify-your-n8n-a | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223115_DigiSkillspk-30-- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223115_Score-released-Op | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223116_DigiSkillspk-30-- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223116_Jahansher-youre-r | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223117_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223117_Your-project-look | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223118_Intro-to-cryptogr | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223118_Win-1500-Redis-AI | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223223_Real-freedom-coul | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223223_Weather-API-Trial | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223224_DigiSkillspk-30-- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223224_The-fastest-way-t | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223225_New-login-to-your | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223226_A-home-business-y | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223226_Heres-your-Video- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223226_Youre-Not-Getting | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223227_Challenges-with-g | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223227_How-I-Spent-5000- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223332_Clerk-Update-July | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223332_Could-this-be-you | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223333_Did-you-just-log- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223333_Join-the-Assembly | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223333_Muhammad-Amir-rec | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223334_No-Subject.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223335_New-login-to-your | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223335_No-Subject.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223336_Creative-head-at- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223440_Cookies-geolocati | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223440_Daniyal-Nagori-re | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223441_813-668-is-your-I | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223441_You-have-8-notifi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223442_Eye-Opening-TRUTH | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223442_New-Roadmaps-Impr | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223443_A-new-phone-numbe | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223443_Ready-to-start-a- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223443_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223444_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223548_Study-online-with | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223549_Learn-more-about- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223549_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223550_Learn-from-the-be | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223550_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223551_Jansher-finish-se | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223551_Security-alert.md | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223552_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223552_Your-Google-Accou | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223656_Your-Google-Play- | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223657_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223657_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223658_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223659_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223700_Is-This-the-Faste | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223700_This-is-your-last | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223701_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223805_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223806_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223806_Welcome-to-Adobe. | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223807_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223807_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223808_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223808_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223809_jahansherkhan9876 | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223809_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223810_npm-OTP-for-loggi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223914_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223915_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223915_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223915_Your-Google-Accou | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223916_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223916_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223917_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223918_npm-OTP-for-loggi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223918_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_223919_npm-OTP-for-loggi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224024_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224024_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224025_npm-OTP-for-loggi | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224025_Successfully-publ | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224026_npm-OTP-for-compl | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224026_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224027_Verify-Email-Addr | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224027_What-will-tomorro | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224028_030492-is-your-Fa | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224028_Login-alert-for-F | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224132_030492-is-your-Fa | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224133_030492-is-your-Fa | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224133_332345-is-your-Fa | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224134_332345-is-your-Fa | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224135_Last-6-days-Accel | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224135_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224136_Career-benefits-f | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224136_Simplify-Your-Dro | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224241_657100-is-your-Fa | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224241_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224242_Live-QA-with-PGDM | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224242_UPDATE-New-regist | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224243_Register-now-Shop | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224243_Student-Success-S | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224244_Jansher-finish-se | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224244_Reminder-Celebrat | 309h | Task pending for 309h without processing |
+| stale_task | EMAIL_224245_Your-Google-Accou | 309h | Task pending for 309h without processing |
+| stale_task | fresh-bronze-test-2026.md | 309h | Task pending for 309h without processing |
+| stale_task | sample-task.md | 309h | Task pending for 309h without processing |
+| stale_task | test-bronze-auto.md | 309h | Task pending for 309h without processing |
+| stale_task | test-fresh-task.md | 309h | Task pending for 309h without processing |
+| stale_task | WHATSAPP_214651_Test-Contact.m | 264h | Task pending for 264h without processing |
+| stale_approval | approve-EMAIL_141750_So-you-Ja | 309h | Approval pending for 309h |
+| stale_approval | approve-EMAIL_214746_Subagents | 309h | Approval pending for 309h |
+| stale_approval | approve-EMAIL_214748_Thanks-fo | 309h | Approval pending for 309h |
+| stale_approval | approve-EMAIL_214749_Your-Rovo | 309h | Approval pending for 309h |
+| stale_approval | approve-EMAIL_214857_Your-OTP- | 309h | Approval pending for 309h |
+| stale_approval | approve-EMAIL_215113_Unbreakab | 309h | Approval pending for 309h |
+| stale_approval | approve-PLAN_214651_WhatsApp-M | 264h | Approval pending for 264h |
+| stale_approval | FACEBOOK_190226_AI-Business-Au | 309h | Approval pending for 309h |
+| stale_approval | INSTAGRAM_190226_AI-Business-A | 309h | Approval pending for 309h |
+| stale_approval | LINKEDIN_001403_Client-Success | 309h | Approval pending for 309h |
+| stale_approval | LINKEDIN_001407_Future-of-Work | 309h | Approval pending for 309h |
+| stale_approval | LINKEDIN_214511_Test-sales-pos | 264h | Approval pending for 264h |
+| stale_approval | TWITTER_190226_AI-Business-Aut | 309h | Approval pending for 309h |
+| blocked_plan | PLAN_214651_WhatsApp-Message-f | 264h | Plan blocked awaiting approval for 264h |
+
+## Recommended Actions for This Week
+
+1. **Review 13 pending approval(s)** — items blocked waiting for human decision
+2. **Clear task backlog** — 510 items in Needs_Action/ queue
+3. **Address 509 stale task(s)** — tasks waiting >48 hours without processing
+4. **Investigate 1 financial anomaly/anomalies** — transactions exceeding 2x category average
+
+## Odoo Financial Summary
+
+**Source**: Odoo (USD)
+
+| Metric | Amount |
+|--------|--------|
+| Total Revenue | USD 135,949.00 |
+| Total Expenses | USD 652.27 |
+| **Net Income** | **USD 135,296.73** |
+| Outstanding | USD 136,601.27 |
+| Overdue | USD 104,821.27 (9 invoices) |
+
+### Overdue Invoices
+
+| Invoice | Customer | Amount Due | Due Date |
+|---------|----------|------------|----------|
+| INV/2026/00008 | LightsUp | USD 750.00 | 2026-02-24 |
+| INV/2026/00002 | Acme Corporation | USD 46,250.00 | 2026-02-24 |
+| INV/2026/00003 | Acme Corporation | USD 20,375.00 | 2026-02-24 |
+| INV/2026/00009 | OpenWood | USD 1,799.00 | 2026-02-24 |
+| INV/2026/00004 | Acme Corporation | USD 31,750.00 | 2026-02-09 |
+| BILL/2026/02/0002 | Gemini Furniture | USD 622.27 | 2026-02-24 |
+| INV/2026/00007 | OpenWood | USD 275.00 | 2026-02-28 |
+| INV/2026/00006 | OpenWood | USD 1,000.00 | 2026-02-28 |
+| INV/2026/00005 | OpenWood | USD 2,000.00 | 2026-02-28 |
+
+## Social Media Activity
+
+| Platform | Drafts | Approved | Posted |
+|----------|--------|----------|--------|
+| Facebook | 1 | 0 | 6 |
+| Instagram | 1 | 0 | 7 |
+| Twitter | 1 | 0 | 1 |
+| Linkedin | 3 | 0 | 7 |
+
+**Total Posted**: 21 | **Pending**: 6
+
+## Recent Activity (Last 15 Events)
+
+| Time | Action | File | Outcome |
+|------|--------|------|---------|
+| 22:10 | analytics_completed | system | success |
+| 22:10 | anomaly_detected | Emergency Server Repair | success |
+| 22:10 | csv_loaded | sample-transactions.csv | success |
+| 22:10 | analytics_started | system | success |
+| 22:09 | inbox_processed | live-test-1773439765.md | success |
+| 22:09 | file_detected | live-test-1773439765.md | success |
+| 22:09 | watcher_started | system | success |
+| 22:05 | watcher_stopped | system | success |
+| 22:05 | watcher_started | system | success |
+
+---
+
+*Generated by AI Employee Weekly Briefing — 2026-03-14 03:10 PKT*

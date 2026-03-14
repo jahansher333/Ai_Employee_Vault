@@ -298,6 +298,91 @@ class OdooClient:
             "success": True,
         }
 
+    # ------------------------------------------------------------------
+    # Inventory operations
+    # ------------------------------------------------------------------
+
+    def list_products(
+        self,
+        limit: int = 50,
+        category: str | None = None,
+    ) -> list[dict]:
+        """List products with stock information."""
+        domain: list = []
+        if category:
+            domain.append(["categ_id.name", "ilike", category])
+
+        # Core fields always available
+        fields = ["name", "default_code", "list_price", "categ_id", "type"]
+
+        # Try stock fields (only if Inventory module installed)
+        stock_fields = ["qty_available", "virtual_available"]
+        has_stock = False
+        try:
+            test = self.search_read("product.product", [], fields + stock_fields, limit=1)
+            if test is not None:
+                has_stock = True
+                fields += stock_fields
+        except Exception:
+            pass
+
+        records = self.search_read("product.product", domain, fields, limit,
+                                   order="name asc")
+        result = []
+        for r in records:
+            result.append({
+                "id": r["id"],
+                "name": r.get("name", ""),
+                "sku": r.get("default_code", "") or "",
+                "price": r.get("list_price", 0.0),
+                "qty_available": r.get("qty_available", 0.0) if has_stock else 0.0,
+                "qty_forecast": r.get("virtual_available", 0.0) if has_stock else 0.0,
+                "category": _extract_name(r.get("categ_id")),
+                "type": r.get("type", ""),
+                "has_stock_tracking": has_stock,
+            })
+        return result
+
+    def get_low_stock_products(self, threshold: float = 5.0) -> list[dict]:
+        """Return products where qty_available < threshold."""
+        products = self.list_products(limit=500)
+        return [p for p in products if p["qty_available"] < threshold]
+
+    def get_inventory_summary(self) -> dict:
+        """High-level inventory summary."""
+        products = self.list_products(limit=1000)
+        total_value = sum(p["price"] * max(p["qty_available"], 0) for p in products)
+        low_stock = [p for p in products if p["qty_available"] < 5]
+        out_of_stock = [p for p in products if p["qty_available"] <= 0]
+        return {
+            "total_products": len(products),
+            "total_value": round(total_value, 2),
+            "low_stock_count": len(low_stock),
+            "out_of_stock_count": len(out_of_stock),
+            "success": True,
+        }
+
+    def get_stock_moves(self, limit: int = 20) -> list[dict]:
+        """Recent stock movements from stock.move."""
+        fields = [
+            "product_id", "product_uom_qty", "state", "date",
+            "location_id", "location_dest_id",
+        ]
+        records = self.search_read("stock.move", [], fields, limit,
+                                   order="date desc")
+        result = []
+        for r in records:
+            result.append({
+                "id": r["id"],
+                "product": _extract_name(r.get("product_id")),
+                "quantity": r.get("product_uom_qty", 0.0),
+                "state": r.get("state", ""),
+                "date": r.get("date", ""),
+                "location_from": _extract_name(r.get("location_id")),
+                "location_to": _extract_name(r.get("location_dest_id")),
+            })
+        return result
+
     def check_connection(self) -> dict:
         """Test Odoo connectivity and authentication."""
         try:
@@ -339,6 +424,10 @@ def main() -> None:
     parser.add_argument("--balances", action="store_true", help="Show account balances")
     parser.add_argument("--journal", action="store_true", help="List journal entries")
     parser.add_argument("--summary", action="store_true", help="Financial summary")
+    parser.add_argument("--products", action="store_true", help="List products with stock")
+    parser.add_argument("--low-stock", action="store_true", help="Show low stock alerts")
+    parser.add_argument("--inventory-summary", action="store_true", help="Inventory overview")
+    parser.add_argument("--stock-moves", action="store_true", help="Recent stock movements")
     parser.add_argument("--limit", type=int, default=20, help="Limit results")
     args = parser.parse_args()
 
@@ -397,6 +486,43 @@ def main() -> None:
         print(f"Outstanding: {summary['currency']} {summary['outstanding_invoices']:,.2f}")
         print(f"Overdue:     {summary['overdue_count']} invoices "
               f"({summary['currency']} {summary['overdue_amount']:,.2f})")
+        return
+
+    if args.products:
+        products = client.list_products(limit=args.limit)
+        for p in products:
+            sku = f" [{p['sku']}]" if p['sku'] else ""
+            print(f"  {p['name']}{sku} | ${p['price']:,.2f} | "
+                  f"Stock: {p['qty_available']:.0f} | Forecast: {p['qty_forecast']:.0f}")
+        print(f"\nTotal: {len(products)} product(s)")
+        return
+
+    if args.low_stock:
+        low = client.get_low_stock_products()
+        if not low:
+            print("No low stock products.")
+            return
+        for p in low:
+            status = "OUT OF STOCK" if p['qty_available'] <= 0 else f"{p['qty_available']:.0f} remaining"
+            print(f"  [ALERT] {p['name']} | {status} | ${p['price']:,.2f}")
+        print(f"\nLow stock: {len(low)} product(s)")
+        return
+
+    if args.inventory_summary:
+        s = client.get_inventory_summary()
+        print(f"Total Products:  {s['total_products']}")
+        print(f"Total Value:     ${s['total_value']:,.2f}")
+        print(f"Low Stock:       {s['low_stock_count']}")
+        print(f"Out of Stock:    {s['out_of_stock_count']}")
+        return
+
+    if args.stock_moves:
+        moves = client.get_stock_moves(limit=args.limit)
+        for m in moves:
+            print(f"  {m['date'][:16]} | {m['product'][:25]} | "
+                  f"Qty: {m['quantity']:.0f} | {m['state']} | "
+                  f"{m['location_from'][:15]} -> {m['location_to'][:15]}")
+        print(f"\nTotal: {len(moves)} move(s)")
         return
 
     parser.print_help()

@@ -1,0 +1,6 @@
+dashboard/node_modules
+dashboard/.next
+.git
+__pycache__
+*.pyc
+.env

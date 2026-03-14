@@ -46,6 +46,7 @@ def build_component_list(
     include_scheduler: bool = True,
     include_odoo: bool = True,
     include_social: bool = True,
+    include_telegram: bool = True,
 ) -> list[dict]:
     """Build the list of components to launch.
 
@@ -85,6 +86,15 @@ def build_component_list(
         components.append({
             "name": "WhatsApp Watcher",
             "script": "whatsapp_watcher.py",
+            "args": ["--vault-path", str(vault_path)],
+            "required": False,
+            "tier": "Silver",
+        })
+
+    if include_telegram:
+        components.append({
+            "name": "Telegram Watcher",
+            "script": "telegram_watcher.py",
             "args": ["--vault-path", str(vault_path)],
             "required": False,
             "tier": "Silver",
@@ -283,6 +293,7 @@ def run_orchestrator(
     include_scheduler: bool = True,
     include_odoo: bool = True,
     include_social: bool = True,
+    include_telegram: bool = True,
     auto_restart: bool = False,
     dry_run: bool = False,
 ) -> None:
@@ -301,6 +312,7 @@ def run_orchestrator(
         include_scheduler=include_scheduler,
         include_odoo=include_odoo,
         include_social=include_social,
+        include_telegram=include_telegram,
     )
 
     # Platinum Tier: Filter components by zone
@@ -405,6 +417,8 @@ def main() -> None:
                         help="Skip Odoo MCP server")
     parser.add_argument("--no-social", action="store_true",
                         help="Skip Social MCP server")
+    parser.add_argument("--no-telegram", action="store_true",
+                        help="Skip Telegram watcher")
     parser.add_argument("--zone", choices=["cloud", "local"], default=None,
                         help="Platinum Tier: set work zone (cloud=drafts, local=approvals)")
     parser.add_argument("--auto-restart", action="store_true",
@@ -427,6 +441,7 @@ def main() -> None:
         include_scheduler=not args.no_scheduler,
         include_odoo=not args.no_odoo,
         include_social=not args.no_social,
+        include_telegram=not args.no_telegram,
         auto_restart=args.auto_restart,
         dry_run=args.dry_run,
     )

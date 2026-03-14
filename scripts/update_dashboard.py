@@ -76,6 +76,12 @@ status: active
 |----------|------|--------|
 {briefings}<!-- END_BRIEFINGS -->
 
+## Business Analytics
+
+<!-- START_ANALYTICS -->
+*Run `python scripts/data_analyzer.py` to populate this section.*
+<!-- END_ANALYTICS -->
+
 ## How It Works
 
 1. **Drop a file** into `Needs_Action/` — any `.md` file with a task or request

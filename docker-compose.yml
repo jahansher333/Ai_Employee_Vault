@@ -1,0 +1,36 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/vault:ro
+    env_file:
+      - .env
+    environment:
+      - VAULT_PATH=/vault
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  dashboard:
+    build:
+      context: ./dashboard
+      dockerfile: Dockerfile
+      args:
+        - API_URL=http://api:5000
+    ports:
+      - "3000:3000"
+    environment:
+      - API_URL=http://api:5000
+    depends_on:
+      - api
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
