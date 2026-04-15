@@ -467,17 +467,22 @@ def _post_to_facebook_api(content: str) -> dict:
 
 
 def _post_to_twitter_api(content: str) -> dict:
-    """Post a tweet via Twitter API v2."""
-    bearer = os.getenv("TWITTER_BEARER_TOKEN", "")
-    if not bearer:
-        return {"success": False, "error": "Twitter credentials not configured"}
+    """Post a tweet via Twitter API v2 with OAuth 1.0a User Context."""
+    api_key = os.getenv("TWITTER_API_KEY", "")
+    api_secret = os.getenv("TWITTER_API_SECRET", "")
+    access_token = os.getenv("TWITTER_ACCESS_TOKEN", "")
+    access_secret = os.getenv("TWITTER_ACCESS_TOKEN_SECRET", "")
+    if not all([api_key, api_secret, access_token, access_secret]):
+        return {"success": False, "error": "Twitter OAuth 1.0a credentials not configured"}
     try:
         import requests
+        from requests_oauthlib import OAuth1
+        auth = OAuth1(api_key, api_secret, access_token, access_secret)
         resp = requests.post(
             "https://api.twitter.com/2/tweets",
             json={"text": content},
-            headers={"Authorization": f"Bearer {bearer}",
-                     "Content-Type": "application/json"},
+            auth=auth,
+            headers={"Content-Type": "application/json"},
             timeout=30,
         )
         if resp.status_code in (200, 201):

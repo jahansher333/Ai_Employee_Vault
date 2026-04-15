@@ -44,3 +44,11 @@ In_Progress/local/*
 !In_Progress/cloud/.gitkeep
 !In_Progress/local/.gitkeep
 token.json.bak
+
+# Autopilot runtime data
+.autopilot_log.json
+.autopilot_replied.json
+autopilot_config.json
+
+# Temp files
+.tmp_*
