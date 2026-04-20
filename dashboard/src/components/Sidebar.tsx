@@ -32,6 +32,7 @@ const navItems = [
     { id: "inbox", icon: "\uD83D\uDCE5", label: "Inbox Monitor" },
     { id: "errors", icon: "\u26A0", label: "Error Recovery" },
     { id: "financial", icon: "$", label: "Financial" },
+    { id: "odoo", icon: "\uD83C\uDFE2", label: "Odoo ERP" },
     { id: "invoices", icon: "\uD83D\uDCC4", label: "Invoices" },
     { id: "archive", icon: "\uD83D\uDDC4", label: "Archive" },
     { id: "audit", icon: "\u2261", label: "Audit Log" },

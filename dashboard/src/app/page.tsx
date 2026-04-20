@@ -27,6 +27,7 @@ import BulkArchive from "@/components/BulkArchive";
 import InboxMonitor from "@/components/InboxMonitor";
 import UnifiedInbox from "@/components/UnifiedInbox";
 import Autopilot from "@/components/Autopilot";
+import OdooSection from "@/components/OdooSection";
 
 interface Status {
   needs_action: number;
@@ -132,6 +133,7 @@ export default function Home() {
     inbox: { title: "Inbox Monitor", sub: "Gmail, WhatsApp & Telegram watcher status" },
     errors: { title: "Error Recovery", sub: "System health and error tracking" },
     financial: { title: "Financial", sub: "Revenue, expenses and invoices" },
+    odoo: { title: "Odoo ERP", sub: "Financials, inventory & products from self-hosted Odoo" },
     invoices: { title: "Invoices", sub: "PDF invoice generation and export" },
     archive: { title: "Archive", sub: "Manage stale tasks and bulk archival" },
     audit: { title: "Audit Log", sub: "Complete activity history" },
@@ -273,6 +275,8 @@ export default function Home() {
             <InventorySection />
           </>
         )}
+
+        {page === "odoo" && <OdooSection />}
 
         {page === "invoices" && <InvoiceManager onToast={addToast} />}
 

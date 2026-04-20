@@ -150,7 +150,7 @@ def api_financial():
             "success": True,
             **summary,
             "overdue_invoices": [
-                {"name": i["name"], "partner": i["partner_name"],
+                {"id": i["id"], "name": i["name"], "partner": i["partner_name"],
                  "amount": i["amount_residual"], "due": i["invoice_date_due"]}
                 for i in overdue[:10]
             ],
@@ -182,6 +182,62 @@ def api_inventory():
             "products": products[:20],
             "low_stock": low_stock[:10],
         }
+    except Exception as exc:
+        return {"success": False, "error": str(exc)}
+
+
+class ProductCreate(BaseModel):
+    name: str
+    price: float
+    qty: float = 0.0
+
+
+class InvoiceCreate(BaseModel):
+    partner_id: int
+    description: str
+    amount: float
+
+
+@app.get("/api/odoo/customers")
+def api_odoo_customers():
+    """List Odoo customers for dropdowns."""
+    try:
+        from odoo_client import OdooClient
+        client = OdooClient()
+        return {"success": True, "customers": client.list_customers()}
+    except Exception as exc:
+        return {"success": False, "error": str(exc), "customers": []}
+
+
+@app.post("/api/odoo/product")
+def api_odoo_create_product(body: ProductCreate):
+    """Create a new Odoo product."""
+    try:
+        from odoo_client import OdooClient
+        client = OdooClient()
+        return client.create_product(body.name, body.price, body.qty)
+    except Exception as exc:
+        return {"success": False, "error": str(exc)}
+
+
+@app.post("/api/odoo/invoice")
+def api_odoo_create_invoice(body: InvoiceCreate):
+    """Create and post a customer invoice in Odoo."""
+    try:
+        from odoo_client import OdooClient
+        client = OdooClient()
+        return client.create_invoice(body.partner_id, body.description, body.amount)
+    except Exception as exc:
+        return {"success": False, "error": str(exc)}
+
+
+@app.post("/api/odoo/invoice/{invoice_id}/pay")
+def api_odoo_pay_invoice(invoice_id: int):
+    """Register full payment on an invoice."""
+    try:
+        from odoo_client import OdooClient
+        client = OdooClient()
+        return client.register_payment(invoice_id)
     except Exception as exc:
         return {"success": False, "error": str(exc)}
 
