@@ -34,7 +34,7 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 # Copy backend scripts
 COPY scripts/ ./scripts/
 
-# Copy ALL vault folders
+# Copy entire vault structure (all folders + root md files)
 COPY Accounting/ /vault/Accounting/
 COPY Approved/ /vault/Approved/
 COPY Archive/ /vault/Archive/
@@ -48,12 +48,8 @@ COPY Needs_Action/ /vault/Needs_Action/
 COPY Pending_Approval/ /vault/Pending_Approval/
 COPY Plans/ /vault/Plans/
 COPY Updates/ /vault/Updates/
-COPY auto_reply/ /vault/auto_reply/
 COPY tests/ /vault/tests/
-
-# Copy root-level files
 COPY Dashboard.md /vault/Dashboard.md
-COPY *.md /vault/
 
 # Copy built dashboard
 COPY --from=dashboard-builder /dashboard/.next/standalone /app/dashboard/
@@ -62,7 +58,7 @@ COPY --from=dashboard-builder /dashboard/public /app/dashboard/public
 
 # Startup script
 COPY start.sh /app/start.sh
-RUN chmod +x /app/start.sh
+RUN chmod +x /app/start.sh && sed -i 's/\r$//' /app/start.sh
 
 ENV VAULT_PATH=/vault
 ENV PYTHONUNBUFFERED=1
