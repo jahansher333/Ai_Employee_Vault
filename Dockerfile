@@ -34,12 +34,26 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 # Copy backend scripts
 COPY scripts/ ./scripts/
 
-# Copy vault data folders
-COPY Needs_Action/ /vault/Needs_Action/
-COPY Done/ /vault/Done/
+# Copy ALL vault folders
+COPY Accounting/ /vault/Accounting/
 COPY Approved/ /vault/Approved/
+COPY Archive/ /vault/Archive/
+COPY Briefings/ /vault/Briefings/
+COPY Bronze/ /vault/Bronze/
+COPY Done/ /vault/Done/
+COPY In_Progress/ /vault/In_Progress/
+COPY Invoices/ /vault/Invoices/
 COPY Logs/ /vault/Logs/
+COPY Needs_Action/ /vault/Needs_Action/
+COPY Pending_Approval/ /vault/Pending_Approval/
+COPY Plans/ /vault/Plans/
+COPY Updates/ /vault/Updates/
+COPY auto_reply/ /vault/auto_reply/
+COPY tests/ /vault/tests/
+
+# Copy root-level files
 COPY Dashboard.md /vault/Dashboard.md
+COPY *.md /vault/
 
 # Copy built dashboard
 COPY --from=dashboard-builder /dashboard/.next/standalone /app/dashboard/
@@ -55,7 +69,6 @@ ENV PYTHONUNBUFFERED=1
 ENV NODE_ENV=production
 ENV PORT=3000
 
-# Back4App uses the PORT env var — expose 3000 (dashboard) as main
 EXPOSE 3000
 
 CMD ["/app/start.sh"]
